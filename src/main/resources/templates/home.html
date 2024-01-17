@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>Pizza Creed</title>
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+          integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" rel="stylesheet">
+    <script crossorigin="anonymous"
+            integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script crossorigin="anonymous" src="https://kit.fontawesome.com/4874d070ea.js"></script>
+    <!-- Favicons -->
+    <link rel="icon" th:href="@{/img/favicon.png}">
+    <link rel="apple-touch-icon" th:href="@{/img/apple-touch-icon.png}">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+          rel="stylesheet">
+
+    <style>
+        body{
+            background-color: azure;
+        }
+        .navbar {
+            display: flex;
+            flex-direction: column;
+            background-color: #FEB264;
+        }
+        .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .collogo a {
+            text-decoration: none;
+            color: black;
+            font-weight: 900;
+            font-size: 48px;
+            cursor:auto;
+        }
+        .greatingdiv{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 20px 20px 20px;
+        }
+        .divq{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .div01{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 50px 20px 20px 20px;
+            text-align: justify;
+            font-size: 18px;
+            font-weight: 900;
+            color:black;
+        }
+        .imge{
+            opacity: 50%;
+            width: 100%;
+            height: 300px;
+            position: absolute;
+            object-fit: none;
+        }
+
+        .animate-charcter
+        {
+            text-transform: uppercase;
+            background-image: linear-gradient(
+                -225deg,
+                #231557 0%,
+                #44107a 29%,
+                #ff1361 67%,
+                #fff800 100%
+            );
+            background-size: auto auto;
+            background-clip: border-box;
+            background-size: 200% auto;
+            color: #fff;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textclip 2s linear infinite;
+            display: inline-block;
+                font-size: 60px;
+            }
+
+
+            @keyframes textclip {
+            to {
+                background-position: 200% center;
+            }
+        }
+        .divp{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 0px 0px 0px;
+        }
+        .div2{
+            display:flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-evenly;
+            padding: 20px 20px 20px 20px;
+            margin: 100px;
+        }
+        .divAA{
+            background-color:aquamarine;
+            width: 300px;
+            height: 300px;
+            border-radius: 30px;
+            align-items: center;
+            justify-content: center;
+
+        }
+        .divA{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 24px;
+            font-weight: 600;
+            padding-top: 10px;
+        }
+        .btndiv{
+            display: flex;
+            flex-direction: column;
+            background-color:azure;
+            height: 230px;
+            width: 200px;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px 20px 0px 0px;
+        }
+        .button{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #FEB264;
+            border-radius: 8px;
+            border-style: none;
+            box-sizing: border-box;
+            color: #FFFFFF;
+            cursor: pointer;
+            display: inline-block;
+            font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            height: 100px;
+            width: 100px;
+            line-height: 20px;
+            list-style: none;
+            margin: 0;
+            outline: none;
+            padding: 35px 16px;
+            position: relative;
+            text-align: center;
+            text-decoration: none;
+            transition: color 100ms;
+            vertical-align: baseline;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+        }
+        .button:hover,
+        .button:focus {
+            background-color: #ff7b00;
+        }
+
+    </style>
+</head>
+<body style=" background-image: url(img/loginpage.png)" class="body">
+<nav class="navbar">
+    <div class="container">
+        <div class="collogo">
+            <p class="logo"><a href="#">Pizza Creed</a></p>
+        </div>
+        <div class="colbutton">
+            <a class="register-btn btn btn-outline-light" th:href="@{/}">Logout</a>
+        </div>
+    </div>
+</nav>
+<div class="miandiv">
+    <diV class="greatingdiv">
+        <p class="animate-charcter">Welcome to Pizza Creed.!</p>
+    </diV>
+    <div class="div01">
+        <div class="divq">
+            <img src="https://images.unsplash.com/photo-1590947132387-155cc02f3212?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="imge">
+            <p>Discover the extraordinary flavors of our meticulously crafted pizzas, meticulously prepared with the finest and freshest ingredients. Whether you're a traditional Margherita enthusiast, excited to venture into the bold world of our exclusive signature pizzas, or inclined to craft your own culinary masterpiece, we cater to the varied preferences of every pizza connoisseur.</p>
+            <p>Enjoy the convenience of online ordering or treat yourself to a delightful visit to our store, where you can fully immerse yourself in the true essence of pizza perfection. Embark on a flavor journey that will captivate your palate and leave you craving more. Delight in the unparalleled satisfaction that comes from savoring our outstanding pizzas!</p>
+        </diV>
+    </div>
+    <div class="div2">
+        <div class="divAA">
+            <div class="divA">
+                <div class="divp">
+                    <p>Product Management</p>
+                </div>
+                <div class="btndiv">
+                    <a class="button" th:href="@{/product}">Admin</a>
+                </div>
+            </div>
+        </div>
+        <div class="divAA">
+            <div class="divA">
+                <diV class="divp">
+                    <p>Buy Products </p>
+                </diV>
+                <diV class="btndiv">
+                    <a class="button" th:href="@{/product}">Product</a>
+                </diV>
+            </div>
+            <div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>
